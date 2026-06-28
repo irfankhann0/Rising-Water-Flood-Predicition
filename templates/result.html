@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+<section class="result-page">
+
+    <div class="result-card">
+
+        {% if "Flood" in result %}
+
+            <div class="result-icon danger">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h1>Flood Risk Detected</h1>
+
+            <h2>{{ result }}</h2>
+
+            <div class="confidence-box">
+                <h3>Prediction Confidence</h3>
+                <h1>{{ confidence }}%</h1>
+            </div>
+
+            <p>
+                Heavy rainfall conditions indicate a high probability of flooding.
+                Please monitor official weather alerts and take the necessary precautions.
+            </p>
+
+        {% else %}
+
+            <div class="result-icon success">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h1>No Flood Risk</h1>
+
+            <h2>{{ result }}</h2>
+
+            <div class="confidence-box">
+                <h3>Prediction Confidence</h3>
+                <h1>{{ confidence }}%</h1>
+            </div>
+
+            <p>
+                Current rainfall values indicate a low probability of flooding.
+                Continue monitoring weather updates and stay informed.
+            </p>
+
+        {% endif %}
+
+        <div class="tips">
+
+            <h3>
+                <i class="fa-solid fa-shield-heart"></i>
+                Safety Recommendations
+            </h3>
+
+            <ul>
+
+                <li><i class="fa-solid fa-cloud"></i> Stay updated with weather forecasts.</li>
+
+                <li><i class="fa-solid fa-water"></i> Avoid low-lying areas during heavy rainfall.</li>
+
+                <li><i class="fa-solid fa-phone"></i> Keep emergency contact numbers ready.</li>
+
+                <li><i class="fa-solid fa-house"></i> Follow local authority instructions.</li>
+
+            </ul>
+
+        </div>
+
+        <a href="/predict">
+            <button class="predict-btn">
+                <i class="fa-solid fa-rotate-right"></i>
+                Predict Again
+            </button>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
