@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}Predict Flood{% endblock %}
+
+{% block content %}
+
+<section class="predict-page">
+
+    <div class="predict-container">
+
+        <h1>🌊 Flood Prediction Dashboard</h1>
+
+        <p>
+            Enter the monthly and seasonal rainfall values below to predict
+            the flood risk using our trained Random Forest model.
+        </p>
+
+        <form action="/predict" method="POST" class="predict-form">
+
+            <h2>Monthly Rainfall (mm)</h2>
+
+            <div class="form-grid">
+
+                <div class="input-box">
+                    <label>January</label>
+                    <input type="number" step="any" name="JAN" placeholder="Enter JAN rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>February</label>
+                    <input type="number" step="any" name="FEB" placeholder="Enter FEB rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>March</label>
+                    <input type="number" step="any" name="MAR" placeholder="Enter MAR rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>April</label>
+                    <input type="number" step="any" name="APR" placeholder="Enter APR rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>May</label>
+                    <input type="number" step="any" name="MAY" placeholder="Enter MAY rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>June</label>
+                    <input type="number" step="any" name="JUN" placeholder="Enter JUN rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>July</label>
+                    <input type="number" step="any" name="JUL" placeholder="Enter JUL rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>August</label>
+                    <input type="number" step="any" name="AUG" placeholder="Enter AUG rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>September</label>
+                    <input type="number" step="any" name="SEP" placeholder="Enter SEP rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>October</label>
+                    <input type="number" step="any" name="OCT" placeholder="Enter OCT rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>November</label>
+                    <input type="number" step="any" name="NOV" placeholder="Enter NOV rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>December</label>
+                    <input type="number" step="any" name="DEC" placeholder="Enter DEC rainfall" required>
+                </div>
+
+            </div>
+
+            <h2 class="season-title">Seasonal Rainfall (mm)</h2>
+
+            <div class="form-grid">
+
+                <div class="input-box">
+                    <label>January - February</label>
+                    <input type="number" step="any" name="Jan-Feb" placeholder="Jan-Feb rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>March - May</label>
+                    <input type="number" step="any" name="Mar-May" placeholder="Mar-May rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>June - September</label>
+                    <input type="number" step="any" name="Jun-Sep" placeholder="Jun-Sep rainfall" required>
+                </div>
+
+                <div class="input-box">
+                    <label>October - December</label>
+                    <input type="number" step="any" name="Oct-Dec" placeholder="Oct-Dec rainfall" required>
+                </div>
+
+            </div>
+
+            <button class="predict-btn" type="submit">
+
+                <i class="fa-solid fa-cloud-showers-heavy"></i>
+
+                Predict Flood
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
